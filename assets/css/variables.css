@@ -1,0 +1,17 @@
+:root{
+
+    --primary-color:#0B5ED7;
+    --secondary-color:#F8F9FA;
+    --accent-color:#FFC107;
+
+    --dark:#212529;
+    --white:#FFFFFF;
+    --gray:#6C757D;
+
+    --font-family:'Poppins',sans-serif;
+
+    --transition:.3s ease;
+
+    --container-width:1200px;
+
+}
