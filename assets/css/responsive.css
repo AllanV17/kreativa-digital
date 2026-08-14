@@ -1,19 +1,17 @@
 @media (max-width:991.98px){
 
     section{
-
         padding:80px 0;
-
     }
 
 
 /* ==========================
        MOBILE
-    ========================== */
+========================== */
 
-    /* ==========================
+/* ==========================
        NAVBAR MOBILE
-    ========================== */
+========================== */
 
     .navbar{
         padding: .9rem 0;
@@ -23,36 +21,50 @@
         height:42px;
     }
 
+
+    /* Controles de navegación */
+
+    .navbar-controls{
+        display:flex;
+        align-items:center;
+        gap:.75rem;
+    }
+
+    .navbar-controls .navbar-toggler,
+    .navbar-controls .settings-toggle{
+        width:46px;
+        height:46px;
+
+        flex:0 0 46px;
+
+        margin:0;
+    }
+
+
     .navbar-toggler{
         padding:.4rem;
     }
 
     .navbar-collapse{
-
         margin-top:1rem;
+        padding:1.25rem;
 
-    padding:1.25rem;
+        background:var(--surface);
 
-    background:#fff;
+        border:1px solid var(--border-color);
 
-    border:1px solid #e9ecef;
+        border-radius:20px;
 
-    border-radius:20px;
-
-    box-shadow:
-        0 8px 20px rgba(0,0,0,.06),
-        0 20px 50px rgba(0,0,0,.10);
-
+        box-shadow:
+            0 8px 20px var(--shadow-color),
+            0 20px 50px var(--shadow-strong);
     }
 
     .navbar-nav{
-
         gap:0;
-
     }
 
     .navbar-nav .nav-link{
-
         padding:.95rem 0;
 
         text-align:center;
@@ -61,42 +73,31 @@
 
         border-radius:10px;
 
+        transition:background .25s ease,color .25s ease;
     }
 
     .navbar-nav .nav-link:hover{
-
-        background:#f5f8fc;
-
+        background:var(--surface-hover);
     }
 
     .navbar .btn{
+        width:100%;
 
+        margin-top:1rem;
 
-    width:100%;
+        padding:1rem;
 
-    margin-top:1rem;
+        font-size:1rem;
 
-    padding:1rem;
-
-    font-size:1rem;
-
-    font-weight:600;
-
+        font-weight:600;
     }
+
     .navbar-nav .nav-item{
+        border-bottom:1px solid var(--border-subtle);
+    }
 
-    border-bottom:1px solid #f1f3f5;
+    .navbar-nav .nav-item:last-child{
+        border-bottom:none;
+    }
 
-}
-
-.navbar-nav .nav-item:last-child{
-
-    border-bottom:none;
-
-}
-.navbar-nav .nav-link{
-
-    transition:background .25s ease,color .25s ease;
-
-}
 }

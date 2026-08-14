@@ -1,17 +1,91 @@
 :root{
 
+    /* ==========================
+       BRAND
+    ========================== */
+
     --primary-color:#0B5ED7;
     --secondary-color:#F8F9FA;
     --accent-color:#FFC107;
+
+    /* ==========================
+       THEME - LIGHT
+    ========================== */
+
+    --bg-primary:#FFFFFF;
+    --bg-secondary:#F8F9FA;
+    --bg-subtle:#F8FBFF;
+
+    --surface:#FFFFFF;
+    --surface-hover:#F5F8FC;
+
+    --text-primary:#212529;
+    --text-secondary:#495057;
+    --text-muted:#6C757D;
+
+    --border-color:#E9ECEF;
+    --border-strong:#DEE2E6;
+    --border-subtle:#F1F3F5;
+
+    --primary-subtle:#EEF5FF;
+
+    --hero-bg-start:#F8FBFF;
+    --hero-bg-middle:#FFFFFF;
+    --hero-bg-end:#EEF6FF;
+
+    --shadow-color:rgba(0,0,0,.08);
+    --shadow-strong:rgba(0,0,0,.12);
+    --primary-shadow:rgba(13,110,253,.12);
+
+    /* ==========================
+       LEGACY COMPATIBILITY
+    ========================== */
 
     --dark:#212529;
     --white:#FFFFFF;
     --gray:#6C757D;
 
+    /* ==========================
+       GENERAL
+    ========================== */
+
     --font-family:'Poppins',sans-serif;
-
     --transition:.3s ease;
-
     --container-width:1200px;
 
 }
+
+
+/* ==========================
+   THEME - DARK
+========================== */
+
+[data-bs-theme="dark"]{
+
+    --bg-primary:#121820;
+    --bg-secondary:#181F29;
+    --bg-subtle:#151D27;
+
+    --surface:#1B2430;
+    --surface-hover:#222D3A;
+
+    --text-primary:#F1F5F9;
+    --text-secondary:#CBD5E1;
+    --text-muted:#94A3B8;
+
+    --border-color:#2B3746;
+    --border-strong:#3A4758;
+    --border-subtle:#24303D;
+
+    --primary-subtle:#132D52;
+
+    --hero-bg-start:#101A28;
+    --hero-bg-middle:#141E2B;
+    --hero-bg-end:#10233D;
+
+    --shadow-color:rgba(0,0,0,.25);
+    --shadow-strong:rgba(0,0,0,.40);
+    --primary-shadow:rgba(11,94,215,.18);
+
+}
+

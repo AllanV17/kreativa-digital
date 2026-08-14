@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="dark">
 
 <head>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+ <script>
+            const savedTheme = localStorage.getItem("theme") || "light";
+            document.documentElement.setAttribute("data-bs-theme", savedTheme);
+        </script>
     <title>Contacto | Kreativa Digital</title>
 
     <meta name="description"
@@ -37,15 +40,16 @@
 
     <!-- Navbar -->
     <header class="sticky-top">
-    <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
+    <nav id="mainNavbar" class="navbar navbar-expand-lg shadow-sm py-6">
         <div class="container">
 
             <!-- Logo -->
             <a class="navbar-brand fw-bold" href="index.html">
                 <img
-                    src="assets/img/logo/logo.png"
-                    alt="Kreativa Digital"
-                    height="42">
+    id="themeLogo"
+    src="assets/img/logo/logo.png"
+    alt="Kreativa Digital"
+    height="42">
             </a>
 
             <!-- Botón móvil -->
@@ -92,7 +96,18 @@
 
                 </ul>
 
-                
+                <!-- Configuración -->
+
+<button
+    type="button"
+        class="settings-toggle"
+        aria-label="Abrir configuración"
+        aria-expanded="false">
+
+        <i class="bi bi-gear-wide-connected"></i>
+
+
+</button>
 
             </div>
 
@@ -100,7 +115,106 @@
     </nav>
 </header>
 
+<!-- Panel de preferencias -->
 
+<aside
+    id="settingsPanel"
+    class="settings-panel"
+    aria-hidden="true">
+
+    <!-- Encabezado -->
+
+    <div class="settings-panel-header">
+
+        <h3>Preferencias</h3>
+
+        <button
+            type="button"
+            class="settings-close"
+            aria-label="Cerrar configuración">
+
+            <i class="bi bi-x-lg"></i>
+
+        </button>
+
+    </div>
+
+    <!-- Contenido -->
+
+    <div class="settings-panel-body">
+
+        <!-- Tema -->
+
+        <div class="settings-option">
+
+            <div class="settings-option-info">
+
+                <i class="bi bi-circle-half"></i>
+
+                <div>
+
+                    <span class="settings-option-title">
+                        Tema
+                    </span>
+
+                    <small>
+                        Personaliza la apariencia
+                    </small>
+
+                </div>
+
+            </div>
+
+            <!-- Aquí irá posteriormente el control de tema -->
+
+            <button
+                type="button"
+                class="theme-control"
+                aria-label="Cambiar tema">
+
+                <i class="bi bi-sun"></i>
+
+            </button>
+
+        </div>
+
+        <!-- Idioma -->
+
+        <div class="settings-option">
+
+            <div class="settings-option-info">
+
+                <i class="bi bi-translate"></i>
+
+                <div>
+
+                    <span class="settings-option-title">
+                        Idioma
+                    </span>
+
+                    <small>
+                        Español
+                    </small>
+
+                </div>
+
+            </div>
+
+            <i class="bi bi-chevron-right settings-chevron"></i>
+
+        </div>
+
+    </div>
+
+</aside>
+
+<!-- Fondo al abrir configuración -->
+
+<div
+    id="settingsOverlay"
+    class="settings-overlay"
+    aria-hidden="true">
+</div>
 
     <main>
 
@@ -108,8 +222,8 @@
 
     <div class="container text-center">
 
-        <span class="text-primary fw-semibold">
-            Contáctanos
+        <span class="section-label text-primary fw-semibold">
+                Contáctanos
         </span>
 
         <h1 class="display-5 fw-bold mt-3">
@@ -334,14 +448,13 @@
 
             <div class="col-lg-4">
 
-                <a href="index.html" class="footer-logo">
-
-                    <img
-                        src="assets/img/logo/logo.png"
-                        alt="Kreativa Digital"
-                        height="42">
-
-                </a>
+               <a href="index.html" class="footer-logo">
+    <img
+        id="themeFooterLogo"
+        src="assets/img/logo/logo.png"
+        alt="Kreativa Digital"
+        height="42">
+</a>
 
                 <p class="mt-4">
 

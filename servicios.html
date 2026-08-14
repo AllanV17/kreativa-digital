@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="dark">
 
 <head>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+ <script>
+            const savedTheme = localStorage.getItem("theme") || "light";
+            document.documentElement.setAttribute("data-bs-theme", savedTheme);
+        </script>
     <title>Servicios | Kreativa Digital</title>
 
     <meta name="description"
@@ -38,16 +41,19 @@
     <!-- Navbar -->
 
 <!-- Navbar -->
-    <header class="sticky-top">
-    <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
+<header class="sticky-top">
+
+    <nav id="mainNavbar" class="navbar navbar-expand-lg shadow-sm">
+
         <div class="container">
 
             <!-- Logo -->
             <a class="navbar-brand fw-bold" href="index.html">
                 <img
-                    src="assets/img/logo/logo.png"
-                    alt="Kreativa Digital"
-                    height="42">
+    id="themeLogo"
+    src="assets/img/logo/logo.png"
+    alt="Kreativa Digital"
+    height="42">
             </a>
 
             <!-- Botón móvil -->
@@ -65,7 +71,6 @@
             </button>
 
             <!-- Menú -->
-
             <div class="collapse navbar-collapse" id="navbarContent">
 
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
@@ -84,7 +89,8 @@
 
                     <li class="nav-item">
                         <a class="nav-link active" href="servicios.html">
-                            Servicios</a>
+                            Servicios
+                        </a>
                     </li>
 
                     <li class="nav-item">
@@ -103,218 +109,314 @@
 
                 </a>
 
+                <!-- Configuración -->
+                <button
+                     type="button"
+        class="settings-toggle"
+        aria-label="Abrir configuración"
+        aria-expanded="false">
+
+        <i class="bi bi-gear-wide-connected"></i>
+
+
+                </button>
+
             </div>
 
         </div>
+
     </nav>
+
 </header>
+<!-- Panel de preferencias -->
 
-    <main>
+<aside
+    id="settingsPanel"
+    class="settings-panel"
+    aria-hidden="true">
 
-       <section class="page-header py-5">
+    <!-- Encabezado -->
 
-    <div class="container text-center">
+    <div class="settings-panel-header">
 
-        <span class="text-primary fw-semibold">
-            Nuestros Servicios
-        </span>
+        <h3>Preferencias</h3>
 
-        <h1 class="display-5 fw-bold mt-3">
+        <button
+            type="button"
+            class="settings-close"
+            aria-label="Cerrar configuración">
 
-            Soluciones digitales diseñadas para hacer crecer tu negocio.
+            <i class="bi bi-x-lg"></i>
 
-        </h1>
-
-        <p class="lead mx-auto text-muted" style="max-width:700px;">
-
-            Desde el desarrollo web hasta el posicionamiento SEO,
-            creamos soluciones modernas enfocadas en resultados.
-
-        </p>
+        </button>
 
     </div>
 
-</section>
-<section class="py-5">
+    <!-- Contenido -->
 
-    <div class="container">
+    <div class="settings-panel-body">
 
-        <div class="row justify-content-center">
+        <!-- Tema -->
 
-            <div class="col-lg-8 text-center">
+        <div class="settings-option">
 
-                <h2 class="fw-bold mb-4">
+            <div class="settings-option-info">
 
-                    Servicios pensados para impulsar tu presencia digital
+                <i class="bi bi-circle-half"></i>
 
-                </h2>
+                <div>
 
-                <p class="text-muted">
+                    <span class="settings-option-title">
+                        Tema
+                    </span>
 
-                    Analizamos las necesidades de cada cliente para ofrecer
-                    soluciones personalizadas que mejoren su presencia digital,
-                    optimicen procesos y generen oportunidades de crecimiento.
+                    <small>
+                        Personaliza la apariencia
+                    </small>
 
+                </div>
+
+            </div>
+
+            <!-- Aquí irá posteriormente el control de tema -->
+
+            <button
+                type="button"
+                class="theme-control"
+                aria-label="Cambiar tema">
+
+                <i class="bi bi-sun"></i>
+
+            </button>
+
+        </div>
+
+        <!-- Idioma -->
+
+        <div class="settings-option">
+
+            <div class="settings-option-info">
+
+                <i class="bi bi-translate"></i>
+
+                <div>
+
+                    <span class="settings-option-title">
+                        Idioma
+                    </span>
+
+                    <small>
+                        Español
+                    </small>
+
+                </div>
+
+            </div>
+
+            <i class="bi bi-chevron-right settings-chevron"></i>
+
+        </div>
+
+    </div>
+
+</aside>
+
+<!-- Fondo al abrir configuración -->
+
+<div
+    id="settingsOverlay"
+    class="settings-overlay"
+    aria-hidden="true">
+</div>
+<main>
+
+    <!-- HERO SERVICIOS -->
+
+    <section class="services-hero">
+
+        <div class="container">
+
+            <div class="services-hero-content">
+
+                <span class="section-label text-primary fw-semibold">
+                    Nuestros Servicios
+                </span>
+
+                <h1 class="services-title">
+                    Soluciones digitales diseñadas para hacer crecer tu negocio.
+                </h1>
+
+                <p class="services-description">
+                    Desde el desarrollo web hasta el posicionamiento SEO,
+                    creamos soluciones modernas enfocadas en resultados.
                 </p>
 
             </div>
 
         </div>
 
-    </div>
+    </section>
 
-</section>
-<section id="services-grid" class="py-5 bg-light">
 
-    <div class="container">
+    <!-- LISTADO DE SERVICIOS -->
 
-        <div class="row g-4">
+    <section id="services-list" class="services-list-section">
 
-            <!-- Servicio 1 -->
+        <div class="container">
 
-            <div class="col-lg-4">
+            <!-- Encabezado -->
 
-                <div class="service-card h-100">
+            <div class="services-section-header">
 
-                    <div class="service-icon">
+                <span class="section-label text-primary fw-semibold">
+                Lo que hacemos
+            </span>
 
-                        <i class="bi bi-code-slash"></i>
+                <h2>
+                    Servicios pensados para impulsar tu presencia digital
+                </h2>
 
-                    </div>
-
-                    <h3>Desarrollo Web</h3>
-
-                    <p>
-
-                        Sitios corporativos, landing pages,
-                        tiendas virtuales y soluciones personalizadas.
-
-                    </p>
-
-                </div>
+                <p>
+                    Analizamos las necesidades de cada cliente para ofrecer
+                    soluciones personalizadas que mejoren su presencia digital,
+                    optimicen procesos y generen oportunidades de crecimiento.
+                </p>
 
             </div>
 
-            <!-- Servicio 2 -->
 
-            <div class="col-lg-4">
+            <!-- Grid de servicios -->
 
-                <div class="service-card h-100">
+            <div class="row g-4">
 
-                    <div class="service-icon">
+                <!-- Servicio 1 -->
 
-                        <i class="bi bi-phone"></i>
+                <div class="col-lg-4">
+
+                    <div class="service-card h-100">
+
+                        <div class="service-icon">
+                            <i class="bi bi-code-slash"></i>
+                        </div>
+
+                        <h3>Desarrollo Web</h3>
+
+                        <p>
+                            Sitios corporativos, landing pages,
+                            tiendas virtuales y soluciones personalizadas.
+                        </p>
 
                     </div>
-
-                    <h3>Diseño Responsive</h3>
-
-                    <p>
-
-                        Experiencias optimizadas para computadoras,
-                        tablets y dispositivos móviles.
-
-                    </p>
 
                 </div>
 
-            </div>
 
-            <!-- Servicio 3 -->
+                <!-- Servicio 2 -->
 
-            <div class="col-lg-4">
+                <div class="col-lg-4">
 
-                <div class="service-card h-100">
+                    <div class="service-card h-100">
 
-                    <div class="service-icon">
+                        <div class="service-icon">
+                            <i class="bi bi-phone"></i>
+                        </div>
 
-                        <i class="bi bi-search"></i>
+                        <h3>Diseño Responsive</h3>
+
+                        <p>
+                            Experiencias optimizadas para computadoras,
+                            tablets y dispositivos móviles.
+                        </p>
 
                     </div>
-
-                    <h3>SEO</h3>
-
-                    <p>
-
-                        Mejoramos el posicionamiento de tu sitio para
-                        aumentar su visibilidad en buscadores.
-
-                    </p>
 
                 </div>
 
-            </div>
 
-            <!-- Servicio 4 -->
+                <!-- Servicio 3 -->
 
-            <div class="col-lg-4">
+                <div class="col-lg-4">
 
-                <div class="service-card h-100">
+                    <div class="service-card h-100">
 
-                    <div class="service-icon">
+                        <div class="service-icon">
+                            <i class="bi bi-search"></i>
+                        </div>
 
-                        <i class="bi bi-speedometer2"></i>
+                        <h3>SEO</h3>
+
+                        <p>
+                            Mejoramos el posicionamiento de tu sitio para
+                            aumentar su visibilidad en buscadores.
+                        </p>
 
                     </div>
-
-                    <h3>Optimización</h3>
-
-                    <p>
-
-                        Mejoramos velocidad, rendimiento y experiencia
-                        de usuario para obtener mejores resultados.
-
-                    </p>
 
                 </div>
 
-            </div>
 
-            <!-- Servicio 5 -->
+                <!-- Servicio 4 -->
 
-            <div class="col-lg-4">
+                <div class="col-lg-4">
 
-                <div class="service-card h-100">
+                    <div class="service-card h-100">
 
-                    <div class="service-icon">
+                        <div class="service-icon">
+                            <i class="bi bi-speedometer2"></i>
+                        </div>
 
-                        <i class="bi bi-shield-check"></i>
+                        <h3>Optimización</h3>
+
+                        <p>
+                            Mejoramos velocidad, rendimiento y experiencia
+                            de usuario para obtener mejores resultados.
+                        </p>
 
                     </div>
-
-                    <h3>Mantenimiento</h3>
-
-                    <p>
-
-                        Actualizaciones, seguridad,
-                        respaldos y soporte continuo.
-
-                    </p>
 
                 </div>
 
-            </div>
 
-            <!-- Servicio 6 -->
+                <!-- Servicio 5 -->
 
-            <div class="col-lg-4">
+                <div class="col-lg-4">
 
-                <div class="service-card h-100">
+                    <div class="service-card h-100">
 
-                    <div class="service-icon">
+                        <div class="service-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
 
-                        <i class="bi bi-graph-up-arrow"></i>
+                        <h3>Mantenimiento</h3>
+
+                        <p>
+                            Actualizaciones, seguridad,
+                            respaldos y soporte continuo.
+                        </p>
 
                     </div>
 
-                    <h3>Marketing Digital</h3>
+                </div>
 
-                    <p>
 
-                        Estrategias para incrementar tráfico,
-                        conversiones y presencia online.
+                <!-- Servicio 6 -->
 
-                    </p>
+                <div class="col-lg-4">
+
+                    <div class="service-card h-100">
+
+                        <div class="service-icon">
+                            <i class="bi bi-graph-up-arrow"></i>
+                        </div>
+
+                        <h3>Marketing Digital</h3>
+
+                        <p>
+                            Estrategias para incrementar tráfico,
+                            conversiones y presencia online.
+                        </p>
+
+                    </div>
 
                 </div>
 
@@ -322,11 +424,9 @@
 
         </div>
 
-    </div>
+    </section>
 
-</section>
-
-    </main>
+</main>
 
 
 
@@ -342,13 +442,12 @@
             <div class="col-lg-4">
 
                 <a href="index.html" class="footer-logo">
-
-                    <img
-                        src="assets/img/logo/logo.png"
-                        alt="Kreativa Digital"
-                        height="42">
-
-                </a>
+    <img
+        id="themeFooterLogo"
+        src="assets/img/logo/logo.png"
+        alt="Kreativa Digital"
+        height="42">
+</a>
 
                 <p class="mt-4">
 

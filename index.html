@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="dark">
 
 <head>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <script>
+            const savedTheme = localStorage.getItem("theme") || "light";
+            document.documentElement.setAttribute("data-bs-theme", savedTheme);
+        </script>
     <title>Kreativa Digital | Desarrollo Web Profesional</title>
 
     <meta name="description"
@@ -38,78 +41,197 @@
     <!-- Navbar -->
      
     <header class="sticky-top">
-    <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-6">
+    <nav id="mainNavbar" class="navbar navbar-expand-lg shadow-sm py-6">
         <div class="container">
 
             <!-- Logo -->
             <a class="navbar-brand fw-bold" href="index.html">
                 <img
-                    src="assets/img/logo/logo.png"
-                    alt="Kreativa Digital"
-                    height="42">
+    id="themeLogo"
+    src="assets/img/logo/logo.png"
+    alt="Kreativa Digital"
+    height="42">
             </a>
 
-            <!-- Botón móvil -->
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarContent"
-                aria-controls="navbarContent"
-                aria-expanded="false"
-                aria-label="Abrir menú">
+           <!-- Controles de navegación y preferencias -->
 
-                <span class="navbar-toggler-icon"></span>
+<div class="navbar-controls">
 
-            </button>
+    <!-- Botón móvil -->
+
+    <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarContent"
+        aria-controls="navbarContent"
+        aria-expanded="false"
+        aria-label="Abrir menú">
+
+        <span class="navbar-toggler-icon"></span>
+
+    </button>
+
+    <!-- Configuración -->
+
+    <button
+        type="button"
+        class="settings-toggle"
+        aria-label="Abrir configuración"
+        aria-expanded="false">
+
+        <i class="bi bi-gear"></i>
+
+    </button>
+
+</div>
 
             <!-- Menú -->
 
             <div class="collapse navbar-collapse" id="navbarContent">
 
-                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
 
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">
-                            Inicio
-                        </a>
-                    </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="index.html">
+                Inicio
+            </a>
+        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="nosotros.html">
-                            Nosotros
-                        </a>
-                    </li>
+        <li class="nav-item">
+            <a class="nav-link" href="nosotros.html">
+                Nosotros
+            </a>
+        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="servicios.html">
-                            Servicios
-                        </a>
-                    </li>
+        <li class="nav-item">
+            <a class="nav-link" href="servicios.html">
+                Servicios
+            </a>
+        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="contacto.html">
-                            Contacto
-                        </a>
-                    </li>
+        <li class="nav-item">
+            <a class="nav-link" href="contacto.html">
+                Contacto
+            </a>
+        </li>
 
-                </ul>
+    </ul>
 
-                <a
-                    href="contacto.html"
-                    class="btn btn-primary px-4">
+    <a
+        href="contacto.html"
+        class="btn btn-primary px-4">
 
-                    Solicitar asesoría
+        Solicitar asesoría
 
-                </a>
+    </a>
 
-            </div>
+</div>
 
         </div>
     </nav>
 </header>
 
+<!-- Panel de preferencias -->
 
+<aside
+    id="settingsPanel"
+    class="settings-panel"
+    aria-hidden="true">
+
+    <!-- Encabezado -->
+
+    <div class="settings-panel-header">
+
+        <h3>Preferencias</h3>
+
+        <button
+            type="button"
+            class="settings-close"
+            aria-label="Cerrar configuración">
+
+            <i class="bi bi-x-lg"></i>
+
+        </button>
+
+    </div>
+
+    <!-- Contenido -->
+
+    <div class="settings-panel-body">
+
+        <!-- Tema -->
+
+        <div class="settings-option">
+
+            <div class="settings-option-info">
+
+                <i class="bi bi-circle-half"></i>
+
+                <div>
+
+                    <span class="settings-option-title">
+                        Tema
+                    </span>
+
+                    <small>
+                        Personaliza la apariencia
+                    </small>
+
+                </div>
+
+            </div>
+
+            <!-- Aquí irá posteriormente el control de tema -->
+
+            <button
+                type="button"
+                class="theme-control"
+                aria-label="Cambiar tema">
+
+                <i class="bi bi-sun"></i>
+
+            </button>
+
+        </div>
+
+        <!-- Idioma -->
+
+        <div class="settings-option">
+
+            <div class="settings-option-info">
+
+                <i class="bi bi-translate"></i>
+
+                <div>
+
+                    <span class="settings-option-title">
+                        Idioma
+                    </span>
+
+                    <small>
+                        Español
+                    </small>
+
+                </div>
+
+            </div>
+
+            <i class="bi bi-chevron-right settings-chevron"></i>
+
+        </div>
+
+    </div>
+
+</aside>
+
+<!-- Fondo al abrir configuración -->
+
+<div
+    id="settingsOverlay"
+    class="settings-overlay"
+    aria-hidden="true">
+</div>
     <main>
 
         <!-- Hero -->
@@ -123,7 +245,7 @@
 
             <div class="col-lg-7">
 
-                <span class="badge bg-primary-subtle text-primary mb-3 px-3 py-2">
+                <span class="badge bg-primary-subtle text-primary mb-4 px-3 py-2">
                     Agencia Digital en Nicaragua
                 </span>
 
@@ -191,10 +313,10 @@
         <div class="row justify-content-center text-center mb-5">
 
             <div class="col-lg-7.5">
-
-                <span class="text-primary fw-semibold">
-                    ¿Por qué elegir Kreativa Digital?
-                </span>
+            <span class="section-label text-primary fw-semibold">
+                ¿Por qué elegir Kreativa Digital?
+            </span>
+            
 
                 <h2 class="fw-bold mt-2 mb-3">
                     Soluciones digitales enfocadas en resultados reales
@@ -292,8 +414,8 @@
 
         <div class="text-center mb-4">
 
-            <span class="text-primary fw-semibold">
-                Nuestros servicios
+           <span class="section-label text-primary fw-semibold">
+                Nuestros Servicios
             </span>
 
             <h2 class="fw-bold mt-2">
@@ -445,8 +567,8 @@
 
         <div class="text-center mb-5">
 
-            <span class="text-primary fw-semibold">
-                Nuestro proceso
+            <span class="section-label text-primary fw-semibold">
+                Nuestro Proceso
             </span>
 
             <h2 class="fw-bold mt-2">
@@ -571,13 +693,12 @@
             <div class="col-lg-4">
 
                 <a href="index.html" class="footer-logo">
-
-                    <img
-                        src="assets/img/logo/logo.png"
-                        alt="Kreativa Digital"
-                        height="42">
-
-                </a>
+    <img
+        id="themeFooterLogo"
+        src="assets/img/logo/logo.png"
+        alt="Kreativa Digital"
+        height="42">
+</a>
 
                 <p class="mt-4">
 
