@@ -149,7 +149,7 @@ a{
 
     padding:0;
 
-    border:1px solid var(--border-color);
+    border:none;
 
     border-radius:14px;
 
@@ -161,10 +161,8 @@ a{
 
     transition:
         background-color .25s ease,
-        border-color .25s ease,
         color .25s ease,
-        transform .25s ease,
-        box-shadow .25s ease;
+        transform .25s ease;
 }
 
 
@@ -387,6 +385,13 @@ a{
     width:46px;
     height:46px;
 
+    min-width:46px;
+    min-height:46px;
+
+    padding:0;
+
+    flex-shrink:0;
+
     display:flex;
 
     align-items:center;
@@ -502,8 +507,19 @@ HERO IMAGE
 }
 
 /* ==========================
+   Control de textos
+========================== */
+
+.section-label{
+    font-size:1.35rem;
+}
+
+
+/* ==========================
    VALUE PROPOSITION
 ========================== */
+
+
 
 #value-proposition{
     background:var(--bg-primary);
@@ -956,6 +972,51 @@ HERO IMAGE
     opacity:.15;
 
 }
+/* Tarjeta de marca */
+
+.footer-brand-card{
+
+    height:100%;
+
+    padding:48px;
+
+    background:#ffffff;
+
+    border-radius:28px;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+#footer p{
+
+    color:#ced4da;
+
+}
+#footer .footer-brand-card p{
+    color:#343a40;
+    margin-top:3rem;
+    margin-bottom:0;
+}
+#footer .footer-brand-card .social-links a{
+    color:black;
+}
+.footer-contact-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.75rem;
+
+}
+
+.footer-contact-item i{
+
+    flex-shrink:0;
+
+}
 /*==========================
 MISSION & VISION
 ==========================*/
@@ -1007,9 +1068,7 @@ MISSION & VISION
     margin-bottom:1.5rem;
 
 }
-.section-label{
-    font-size:1.1rem;
-}
+
 /*==========================
 VALUES
 ==========================*/

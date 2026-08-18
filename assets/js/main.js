@@ -18,17 +18,17 @@ function updateLogo(theme) {
     const navbarLogo = document.getElementById("themeLogo");
     const footerLogo = document.getElementById("themeFooterLogo");
 
-    const logoPath =
+    const navbarLogoPath =
         theme === "dark"
             ? "assets/img/logo/logo-dark.png"
             : "assets/img/logo/logo.png";
 
     if (navbarLogo) {
-        navbarLogo.src = logoPath;
+        navbarLogo.src = navbarLogoPath;
     }
 
     if (footerLogo) {
-        footerLogo.src = logoPath;
+        footerLogo.src = "assets/img/logo/logo.png";
     }
 
 }
@@ -186,3 +186,14 @@ function updateLogo(theme) {
 
 });
 
+/* ==========================
+   TOOLTIPS
+========================== */
+
+const tooltipTriggerList = document.querySelectorAll(
+    '[data-bs-toggle="tooltip"]'
+);
+
+tooltipTriggerList.forEach((tooltipTriggerEl) => {
+    new bootstrap.Tooltip(tooltipTriggerEl);
+});
